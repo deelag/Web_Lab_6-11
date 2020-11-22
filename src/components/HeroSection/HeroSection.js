@@ -1,21 +1,19 @@
 import React from 'react';
-import { Button } from './Button';
-import './HeroSection.css';
+import HeroContainer from "./HeroSection.styled";
+import { Button } from '../Button/Button';
 
 function HeroSection() {
     return (
-        <div className='hero-container'>
+        <HeroContainer>
             <h1>CATCH AWAITS</h1>
             <p>What are you waiting for?</p>
-            <div className='hero-btns'>
-                <Button
+            <Button
                 path="/catalog"
                 buttonStyle='btn--outline'
                 buttonSize='btn--large'>
-                    CATALOG <i class="fas fa-caret-right" />
-                </Button>
-            </div>
-        </div>
+                CATALOG <i className="fas fa-caret-right" style={{marginLeft: "10px", fontSize: "22px"}}/>
+            </Button>
+        </HeroContainer>
     )
 }
 

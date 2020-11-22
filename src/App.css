@@ -5,7 +5,7 @@
   font-family: 'PT Sans', sans-serif;
 }
 
-.home, .catalog, .cart {
+.home, .cart {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -13,8 +13,15 @@
   font-size: 3rem;
 }
 
+.catalog {
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  /* font-size: 3rem; */
+}
+
 .cart {
-  background-image: url('/src/images/cart.jpg');
+  background-image: url('/src/components/images/cart.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -23,10 +30,11 @@
 }
 
 .catalog {
-  background-image: url('/src/images/catalog.jpg');
+  /* background-image: url('/src/components/images/catalog.jpg'); */
+  background-color: white;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+  /* color: #fff;
+  font-size: 100px; */
 }
