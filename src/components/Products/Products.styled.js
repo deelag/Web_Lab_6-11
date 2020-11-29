@@ -2,33 +2,42 @@ import styled from 'styled-components'
 
 export const ProductsContainer = styled.div`
     display: flex;
-    width: 1200px;
-    justify-content: space-between;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 100px;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 60px 0;   
 `;
 
 export const ProductContainer = styled.div`
     display: flex;
-    flex: 1;
-    border-radius: 10px;
+    border-radius: 2px;
+    margin: 10px;
     flex-direction: column;
     background-color: #254e58;
-    margin: 20px;
     cursor: pointer;
-    max-width: 250px;
+    overflow: hidden;
+    width: 250px;
+    &:hover{
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    }
 `;
 
+
 export const ProductInfo = styled.div`
+    position: relative;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    align-items: center;
-    margin: 10px 0;
+    height: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
     font-size: 12px;
     font-weight: 400;
     color: white;
     &>*{
-        margin: 2px;
+        margin: 10px 5px;
+    }
+    &>h1{
+        font-size: 22px;
     }
 `;

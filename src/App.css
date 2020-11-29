@@ -5,7 +5,7 @@
   font-family: 'PT Sans', sans-serif;
 }
 
-.home, .cart {
+.cart {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -13,11 +13,10 @@
   font-size: 3rem;
 }
 
-.catalog {
+.catalog{
   display: flex;
-  height: 90vh;
-  justify-content: center;
-  /* font-size: 3rem; */
+  flex-direction: column;
+  align-items: center;
 }
 
 .cart {

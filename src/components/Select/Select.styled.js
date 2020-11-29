@@ -22,7 +22,4 @@ export const SelectBox = styled.select`
 `
 export const Option = styled.option`
     background-color: #254e58;
-    &:hover{
-        background-color: rgba(0, 0, 0, 0.1);
-    }
 `

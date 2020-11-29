@@ -1,5 +1,4 @@
 import React from 'react';
-// import './Footer.css';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
 import { FooterContainer, FooterInput, FooterLinks, FooterSubscription, FooterSubscriptionHeading, SocialIcons, SocialLogo, SocialMediaWrap, WebsiteRights } from './Footer.styled';
@@ -24,7 +23,7 @@ function Footer() {
         <Link to='/about-us' style={{
           color: "#fff",
           textDecoration: "none",
-          fontSize: "30px"
+          fontSize: "22px"
         }}>About Us</Link>
       </FooterLinks>
       <hr style={{ width: "80%", marginTop: "20px" }} />
