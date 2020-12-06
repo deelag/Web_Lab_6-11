@@ -18,6 +18,7 @@ export const ProductContainer = styled.div`
     cursor: pointer;
     overflow: hidden;
     width: 250px;
+    transition: 0.25s linear;
     &:hover{
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
     }

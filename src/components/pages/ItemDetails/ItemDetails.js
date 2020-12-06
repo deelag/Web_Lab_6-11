@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react'
-import { Link, useParams } from "react-router-dom";
+import React, { useEffect, useContext } from 'react'
+import { useParams } from "react-router-dom";
 import { Button } from '../../Button/Button';
 import { ItemDetailContainer, ItemDetailInfo, Buttons } from "./ItemDetails.styled"
+import {myItems} from "../../Items/Items"
 
-function ItemDetails(props) {
+function ItemDetails() {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
+    const itemsList = useContext(myItems);
+
     const { id } = useParams();
-    const item = props.list.find(item => (item.id === parseInt(id)));
+    const item = itemsList.find(item => (item.id === parseInt(id)));
 
     return (
         <ItemDetailContainer>
