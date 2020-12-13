@@ -7,9 +7,9 @@
 
 .cart {
   display: flex;
-  height: 90vh;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   font-size: 3rem;
 }
 
@@ -20,12 +20,12 @@
 }
 
 .cart {
-  background-image: url('/src/components/images/cart.jpg');
+  /* background-image: url('/src/components/images/cart.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+  color: #254e58;
+  /* font-size: 100px; */
 }
 
 .catalog {

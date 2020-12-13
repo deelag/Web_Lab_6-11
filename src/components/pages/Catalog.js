@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../App.css'
 import Filter from '../Filter/Filter'
 import Products from '../Products/Products'
 // import { myItems } from '../Items/Items'
 import Spinner from "../Spinner/Spinner"
-import { getFilteredItems, getItems } from "../ConnectionToBackend/connectionToBackend"
+import { getFilteredItems } from "../ConnectionToBackend/axios"
 
 export function Catalog() {
     useEffect(() => {
@@ -19,10 +19,9 @@ export function Catalog() {
     const [searchText, setSearchText] = useState('')
 
     useEffect(() => {
-        (async function () {
-            setItems(await getFilteredItems(typeFilter, priceFilter, conditionFilter));
-        })()
+        (async () => { setItems(await getFilteredItems(typeFilter, priceFilter, conditionFilter)) })()
     }, [typeFilter, priceFilter, conditionFilter]);
+
 
     useEffect(() => {
         const pattern = new RegExp(searchText, 'i');
@@ -50,27 +49,17 @@ export function Catalog() {
         }
 
         setShowedItems(filteredItems);
+
     }, [typeFilter, priceFilter, conditionFilter, searchText, items]);
 
 
-    if (showedItems.length === 0)
         return (
             <div className="catalog">
                 <Filter type={[typeFilter, setTypeFilter]}
                     price={[priceFilter, setPriceFilter]}
                     condition={[conditionFilter, setConditionFilter]}
                     search={[searchText, setSearchText]} />
-                <Spinner />
-            </div>
-        )
-    else
-        return (
-            <div className="catalog">
-                <Filter type={[typeFilter, setTypeFilter]}
-                    price={[priceFilter, setPriceFilter]}
-                    condition={[conditionFilter, setConditionFilter]}
-                    search={[searchText, setSearchText]} />
-                <Products list={showedItems} />
+             {showedItems.length === 0 ? <Spinner /> : <Products list={showedItems} />} 
             </div>
         )
 };

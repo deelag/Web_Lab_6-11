@@ -13,6 +13,10 @@ export async function getItems(){
     return (await baseRequest.get()).data;
 }
 
+export async function getItemById(id){
+    return (await baseRequest.get(`/${id}`)).data;
+} 
+
 export async function getFilteredItems(type, price, condition){
     // await delay(5000);
     return (await baseRequest.get(`/filters/type=${type}&price=${price}&condition=${condition}`)).data;

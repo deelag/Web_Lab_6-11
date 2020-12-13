@@ -1,19 +1,22 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import { Button } from '../../Button/Button';
 import { ItemDetailContainer, ItemDetailInfo, Buttons } from "./ItemDetails.styled"
-import {myItems} from "../../Items/Items"
+import { useDispatch } from "react-redux";
+import { getItemById } from '../../ConnectionToBackend/axios.js'
+import { add } from '../../Store/actions/actions'
 
 function ItemDetails() {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
-    const itemsList = useContext(myItems);
-
     const { id } = useParams();
-    const item = itemsList.find(item => (item.id === parseInt(id)));
+    const dispatch = useDispatch();
+    const [item, setItem] = useState([]);
 
+    useEffect(() => (async () => { setItem(await getItemById(id))})(), [id])
+    
     return (
         <ItemDetailContainer>
             <img src={item.img} alt={item.alt} height="400px" width="400px" />
@@ -30,7 +33,7 @@ function ItemDetails() {
                         Back to Catalog
                     </Button>
                     <Button
-                        path="/cart"
+                        onClick={() => dispatch(add(item))}
                         buttonStyle='btn--inverse'
                         buttonSize='btn--large'
                     >
