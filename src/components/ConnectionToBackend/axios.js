@@ -9,7 +9,6 @@ const baseRequest = axios.create({
 });
 
 export async function getItems(){
-    // await delay(4000);
     return (await baseRequest.get()).data;
 }
 
@@ -18,10 +17,5 @@ export async function getItemById(id){
 } 
 
 export async function getFilteredItems(type, price, condition){
-    // await delay(5000);
     return (await baseRequest.get(`/filters/type=${type}&price=${price}&condition=${condition}`)).data;
 } 
-
-async function delay(ms){
-    return new Promise(resolve => setTimeout(resolve, ms))
-}

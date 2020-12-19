@@ -3,6 +3,7 @@ export const itemReducer = (state = [], { type, payload }) => {
     switch (type) {
         case 'ADD':
             if (index !== -1) {
+                state[index].counter += 1;
                 return state;
             } else {
                 return [...state, { ...payload, counter: 1 }];
@@ -11,11 +12,10 @@ export const itemReducer = (state = [], { type, payload }) => {
             state[index].counter += 1;
             return [...state];
         case 'DECREMENT':
-            if (state[index].counter > 1) {
+            if (state[index].counter > 0) {
                 state[index].counter -= 1;
                 return [...state];
-            } else {
-                state.splice(index, 1);
+            } else {    
                 return [...state];
             }
         case 'REMOVE':
