@@ -10,8 +10,8 @@ const CustomTextInput = ({ label, ...props }) => {
 
     return (
         <TextInput>
-            <label htmlFor={props.id || props.name}>{label}</label>
-            <input className="text-input" {...field} {...props} />
+            <label htmlFor={props.name}>{label}</label>
+            <input {...field} {...props} />
             {meta.touched && meta.error ? (
                 <div className="error">{meta.error}</div>
             ) : null}
@@ -47,13 +47,12 @@ function Checkout() {
                         .email('Invalid email')
                         .required('Required field'),
                     phone: Yup.string()
-                        //  
                         .matches('^[0][\\d]{9}$|^[+][3][8][0][\\d]{9}$', 'You should enter a valid phone number')
                         .required('Required field'),
                     address: Yup.string()
                         .required('Required field'),
                 })}
-                onSubmit={(values) => {
+                onSubmit={() => {
                     history.push('/success');
                 }}
             >

@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 
-export const CheckoutContainer = styled.div`
+export const SignUpContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 60px;
+  margin: 30px auto;
   
   h1 {
     text-align: center;
     color: #254e58;
-    font-size: 3.6em;
+    font-size: 2.2em;
     margin-bottom: 20px;
   }
 
@@ -17,13 +18,17 @@ export const CheckoutContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    border: solid #254e58 2px;
+    padding: 16px;
+    width: 36%;
     margin: 40px auto;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   }
 
   
-  button:nth-child(even) {
+  button {
     border-radius: 2px;
+    width: 100%;
     outline: none;
     border: none;
     cursor: pointer;
@@ -63,17 +68,16 @@ export const TextInput = styled.div`
 export const Divider = styled.div`
   display: flex;
   width: 100%;
-  justify-content: space-between;
-
-  &>div:nth-child(odd) {
-    margin-right: 40px;
-  }
-
+  margin: 20px auto;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const Buttons = styled.div`
-  width: 100%;
-  margin-top: 40px;
-  display: flex;
-  justify-content: space-between;
+export const NavLink = styled(Link)`
+    font-size: 1.4em;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration:none;
+    color: #254e58;
 `;
+

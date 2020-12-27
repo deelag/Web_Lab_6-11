@@ -35,13 +35,21 @@ export const MenuIcon = styled.div`
     }
 `;
 
+
+export const Buttons = styled.div`
+    display: flex;
+    align-items: center;
+    width: 36%; 
+`;
+
+
 export const NavMenu = styled.ul`
     display: flex;
     justify-self: end;
     font-size: 22px;
     list-style: none;
     text-align: center;
-    margin-right: 80px;
+    margin-right: 20px;
     li{
         height: 80px;
     }
@@ -105,4 +113,3 @@ export const NavLink = styled(Link)`
     }
 `;
 
-// TODO: i bars

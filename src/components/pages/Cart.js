@@ -21,7 +21,7 @@ export default function Cart() {
   if (!items.length) {
     return (
       <div className="cart">
-        <NoItems> No Items Is Here :( </NoItems>
+        <NoItems> There are no items :( </NoItems>
         <Button
           path="/catalog"
           buttonStyle='btn--primary'
